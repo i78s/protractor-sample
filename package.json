@@ -1,0 +1,24 @@
+{
+  "name": "protractor-sample",
+  "version": "0.0.1",
+  "description": "protractorでE2Eテストを動かしてみる",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "sudo ./node_modules/protractor/bin/webdriver-manager update",
+    "start": "./node_modules/protractor/bin/webdriver-manager start",
+    "test": "protractor protractor.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i78s/protractor-sample.git"
+  },
+  "author": "i78s",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/i78s/protractor-sample/issues"
+  },
+  "homepage": "https://github.com/i78s/protractor-sample#readme",
+  "devDependencies": {
+    "protractor": "^2.5.1"
+  }
+}
