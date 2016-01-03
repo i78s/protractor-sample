@@ -1,6 +1,6 @@
 exports.config = {
     //seleniumAddress: 'http://localhost:4444/wd/hub',
-    seleniumServerJar: './node_modules/protractor/selenium/selenium-server-standalone-2.47.1.jar',
+    seleniumServerJar: './webdriver/selenium-server-standalone-*.jar',
     specs: ['spec/**/*Spec.js']
     //,
     //capabilities: {}, // ブラウザ単体でテストする場合の設定
@@ -13,3 +13,13 @@ exports.config = {
     //    }
     //]
 };
+
+function deglob(config) {
+    var glob = require("glob");
+    config.seleniumServerJar = glob.sync(config.seleniumServerJar)[0];
+}
+deglob(exports.config);
+
+function isWindows() {
+    return process.platform === 'win32';
+}
